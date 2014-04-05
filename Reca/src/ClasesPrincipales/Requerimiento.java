@@ -42,6 +42,17 @@ public class Requerimiento {
        }
    }//conectarBD
    
+   void Requerimiento(int idRequerimiento,String Identficador,String NombreRequerimiento,String Descripcion,String EstadoRequerimiento,String Tipo,String PrioridadRequerimiento,String Observaciones){
+    this.idRequerimiento=idRequerimiento;
+    this.Identficador=Identficador;
+    this.NombreRequerimiento=NombreRequerimiento;
+    this.Descripcion=Descripcion;
+    this.EstadoRequerimiento=EstadoRequerimiento;
+    this.Tipo=Tipo;
+    this.PrioridadRequerimiento=PrioridadRequerimiento;
+    this.Observaciones=Observaciones;
+   }
+   
    int NuevoRequerimiento(){
        try {
            consultaBD.executeUpdate("INSERT INTO Requerimiento (idRequerimiento,Identficador,NombreRequerimiento,Descripcion,EstadoRequerimiento,Tipo,PrioridadRequerimiento,Observaciones) VALUES ('idRequerimiento','"+Identficador+"','"+NombreRequerimiento+"','"+Descripcion+"','"+EstadoRequerimiento+"','"+Tipo+"','"+PrioridadRequerimiento+"','"+Observaciones+"')");
@@ -53,12 +64,10 @@ public class Requerimiento {
    }//NuevoRequerimiento
    
    int EditarRequerimiento(){
-       try {
-           String modificar = "Identficador="+ Identficador +
-                   ","+"NombreRequerimiento="+ NombreRequerimiento +","+"Descripcion="+ Descripcion +
-                   ","+"EstadoRequerimiento="+ EstadoRequerimiento +","+"Tipo=" + Tipo +
-                   ","+"PrioridadRequerimiento=" + PrioridadRequerimiento +","+"Observaciones="+ Observaciones;
-           consultaBD.executeUpdate("UPDATE Requerimiento SET "+modificar+" WHERE id="+idRequerimiento);
+       try {       
+        // ejemplo consulta: String q = "UPDATE tabla SET " +"NOMBRE='" + nombre +"', EDAD='" + edad +"' WHERE clave=" + clave1;
+        String ConsultaEdita = "UPDATE Requerimiento SET "+ "Identficador='"+Identficador+"', NombreRequerimiento='"+NombreRequerimiento+"', Descripcion='"+Descripcion+"' , EstadoRequerimiento='"+EstadoRequerimiento+"', Tipo='"+Tipo+"', PrioridadRequerimiento='"+PrioridadRequerimiento+"' , Observaciones='"+Observaciones+"' WHERE id='"+idRequerimiento;
+        consultaBD.executeUpdate(ConsultaEdita);
              return 0;
        } catch (SQLException ex) {
            Logger.getLogger(Requerimiento.class.getName()).log(Level.SEVERE, null, ex);
