@@ -1,0 +1,122 @@
+body
+{
+	font-family: 'PT Sans', sans-serif;
+	margin: 0em;
+	padding: 0em;	
+}
+footer
+{
+	background: #0052CC;
+	color: white;
+	padding: 1em;
+}
+header
+{
+	background: #003366;
+	color: white;
+	padding: 0.2em;
+}
+
+header h1
+{
+	padding-left: 1em;
+}
+
+
+
+nav
+{
+	background	: #3E5CB3;
+	color: white;
+	padding: 0 0;
+	position: relative;
+	text-align: center;
+}
+
+nav ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li 
+{
+	display: inline-block;
+	margin: 0 5em 0 0;
+	padding: 0.8em 0.5em;
+}
+
+nav ul li:hover, nav ul li a:hover
+{
+	
+}
+
+nav ul li a
+{
+	color: white;
+	padding: 0.8em 0.5em;	
+	transition: 0.3s;
+}
+
+nav ul li a:hover
+{
+	background: white;
+	border-radius: 1em 1em 0 0;
+	color: #3E5CB3;
+	padding: 1.2em 0.5em;
+}
+
+nav ul li a:active
+{
+	background: white;
+	border-radius: 1em 1em 0 0;
+	color: #3E5CB3;
+	padding: 1.2em 0.5em;
+}
+
+#tproyecto
+{
+	padding: 5em 8em;
+}
+
+#tproyecto div div
+{
+	float: right;	
+}
+
+#tproyecto p
+{
+	color: #3E5CB3;
+	font-size: 2em;
+	margin: 0 0 1em 0;
+
+}
+
+#tproyecto div div a
+{
+	padding: 0.8em;
+	text-decoration: none;
+
+}
+
+.boton
+{
+	background: white;
+	border: 1px solid #0052CC;
+	border-radius: 0.5em;
+	box-shadow: 0 2px 0 0 #0052CC;
+	color: #0052CC;
+	width: 30%;
+}
+
+.boton:hover
+{
+	background: #0052CC;
+	border: 1px solid #0052CC;
+	border-radius: 0.5em;
+	box-shadow: 0 2px 0 0 white;
+	color: white;
+	width: 32%;
+}
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta description="registro de usuarios">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/principal.css">
+	<title>RECA | Registro</title>
+</head>
+<body>
+
+	<header>
+			<h1>RECA</h1>
+	</header>
+<section class="cuadro">
+	<form>
+		<p>Registrarse</p>
+		<div><input type="text" placeholder="Nombre:"></div>
+		<div><input type="text" placeholder="Apellido Paterno:"></div>
+		<div><input type="text" placeholder="Apellido Materno:"></div>
+		<div>
+			<span>Genero:</span>
+			<input list="generos" name="genero">
+			<datalist id="generos">
+				<option value="Masculino"></option>
+				<option value="Femenino"></option>
+			</datalist>
+		</div>
+		<div><input type="number" placeholder="Edad:" min="1" max="99"></div>
+		<div><input type="email" placeholder="Correo:"></div>
+		<div><input type="password" placeholder="password:"></div>
+		<div><input type="password" placeholder="Confimar password:"></div>
+		<div><input id="entrar" type="submit" value="Entrar"></div>
+		<div id="registro">
+			<a href="#">Registrarse</a>
+		</div>
+	</form>
+</section>
+</body>
+</html>
