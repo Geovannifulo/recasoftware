@@ -33,11 +33,6 @@ input:focus
 	outline: 0px;
 }
 
-form > div:nth-child(5) > input
-{
-	width: 50%;
-}
-
 form div
 {
 	padding: 0.5em 0;
@@ -65,6 +60,10 @@ form p
 	width: 32%;
 }
 
+#genero
+{
+	width: 50%;
+}
 
 #registro
 {
@@ -96,5 +95,8 @@ form p
 
 }
 
-
+.div-chico
+{
+	width: 41%;
+}
 
