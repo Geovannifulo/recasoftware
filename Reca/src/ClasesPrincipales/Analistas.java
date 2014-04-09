@@ -1,5 +1,4 @@
-package clasesproyectoingenieriadesoftware;
-
+package ClasesPrincipales;
 
 import BaseDatos.ConexionMySQL;
 import java.sql.Connection;
