@@ -15,10 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/principal.css">
 		<title>RECA | Inicio Sesion</title>
 	</head>
-
-        <t:if test="${sessionScope['userEmail'] != null}">
-            <% response.sendRedirect("proyectos.jsp");%>
-        </t:if>
+        
 	<body>
 		<header>
 			<h1>RECA</h1>

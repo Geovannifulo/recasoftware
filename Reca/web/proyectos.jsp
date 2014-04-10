@@ -16,10 +16,7 @@
 	<title>RECA | Proyectos</title>
 </head>
 <body>
-    
-    <%
-        String nombre = request.getParameter("name");
-    %>
+        
 	<header>
 		<h1>RECA</h1>
 	</header>
@@ -45,7 +42,7 @@
 	      <thead>
 	        <tr>
 	          <th>#</th>
-	          <th>First Name</th>
+                  <th>${sessionScope['userEmail']}</th>
 	          <th>Last Name</th>
 	          <th>Username</th>
 	        </tr>
