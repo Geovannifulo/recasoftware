@@ -216,12 +216,13 @@ public class ConexionMySQL {
                                 String apMaterno, 
                                 String edad, 
                                 String correo, 
-                                String genero, 
+                                String genero,
+                                String password,
                                 String idJefe){
 
         String sSQL = "insert into Analistas " +
-                "(nombre, apPaterno, apMaterno, edad, correo, genero, idJefe)"
-                + "values ('?','?','?','?','?','?','?')";
+                "(nombre, apPaterno, apMaterno, edad, correo, genero, password, idJefe)"
+                + "values ('?','?','?','?','?', '?','?','?')";
         int n = 0;
 
         try

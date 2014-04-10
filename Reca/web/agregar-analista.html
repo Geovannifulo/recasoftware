@@ -13,11 +13,11 @@
 			<h1>RECA</h1>
 	</header>
 <section class="cuadro">
-	<form>
+	<form method="POST" action="RegistroAnalistas">
 		<p>Agregar Analista</p>
-		<div><input type="text" placeholder="Nombre:"></div>
-		<div><input type="text" placeholder="Apellido Paterno:"></div>
-		<div><input type="text" placeholder="Apellido Materno:"></div>
+		<div><input type="text" placeholder="Nombre:" name="nombre"></div>
+		<div><input type="text" placeholder="Apellido Paterno:" name="apPaterno"></div>
+		<div><input type="text" placeholder="Apellido Materno:" name="apMaterno"></div>
 		<div>
 			<span>Genero:</span>
 			<input id="genero" list="generos" name="genero">
@@ -26,13 +26,13 @@
 				<option value="Femenino"></option>
 			</datalist>
 		</div>
-		<div><input type="number" placeholder="Edad:" min="1" max="99"></div>
-		<div><input type="email" placeholder="Correo:"></div>
-		<div><input type="password" placeholder="password:"></div>
+		<div><input type="number" placeholder="Edad:" min="1" max="99" name="edad"></div>
+		<div><input type="email" placeholder="Correo:" name="email"></div>
+		<div><input type="password" placeholder="password:" name="passwd"></div>
 		<div><input type="password" placeholder="Confimar password:"></div>
 		<div><input id="entrar" type="submit" value="Entrar"></div>
 		<div id="registro">
-			<a href="#">Registrarse</a>
+			<a href="analistas.html">Volver</a>
 		</div>
 	</form>
 </section>
