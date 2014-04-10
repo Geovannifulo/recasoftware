@@ -29,7 +29,7 @@
 			<li><a href="proyectos.html">Proyectos</a></li>
 			<li><a href="iteraciones.html">Iteraciones</a></li>
 			<li><a href="requerimientos.html">Requerimientos</a></li>
-			<li><a href="analistas.html">Analistas</a></li>
+			<li><a href="analistas.jsp">Analistas</a></li>
 		</ul>
 	</nav>
 

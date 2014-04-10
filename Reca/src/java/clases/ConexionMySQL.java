@@ -227,28 +227,20 @@ public class ConexionMySQL {
                                 String apMaterno, 
                                 int edad, 
                                 String correo, 
-<<<<<<< HEAD
+
                                 String genero,
                                 String password,
-                                String idJefe){
+                                int idJefe){
 
         String sSQL = "insert into Analistas " +
-                "(nombre, apPaterno, apMaterno, edad, correo, genero, password, idJefe)"
-                + "values ('?','?','?','?','?', '?','?','?')";
+                "(nombre, apPaterno, apMaterno, edad, correo, genero, contrasena, idJefe)"
+                + "values (?,?,?,?,?,?,?,?)";
         int n = 0;
-=======
-                                String genero, 
-                                String idJefe, String password){
 
+        System.out.println(sSQL);
      
-            String sSQL = "insert into JefeAnalistas " +
-                "(nombre, apPaterno, apMaterno, edad, correo, genero,idJefe,password)"
-                + "values ('?','?','?','?','?','?','?','?')";
->>>>>>> ef9e16c461ad4d9d20051e56c02345e0d4df62b4
-
         
         
-        int n = 0;
         
         try
         {
@@ -259,8 +251,8 @@ public class ConexionMySQL {
             pst.setInt(4, edad);
             pst.setString(5, correo);
             pst.setString(6, genero);
-            pst.setString(7, idJefe);
-            pst.setString(8, password);
+            pst.setString(7, password);
+            pst.setInt(8, idJefe);
             n = pst.executeUpdate();
         }
         catch (SQLException ex)

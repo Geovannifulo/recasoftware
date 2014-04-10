@@ -34,39 +34,28 @@ public class RegistroAnalistas extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        ConexionMySQL query = new ConexionMySQL("mydb", "root", "");
-        String nombre = (String) request.getAttribute("nombre");
-        String apPaterno = (String) request.getAttribute("apPaterno");
-        String apMtaerno = (String) request.getAttribute("apMaterno");
-        String correo = (String) request.getAttribute("email");
-        String genero = (String) request.getAttribute("genero");
-        String edad = (String) request.getAttribute("edad");
-        String password = (String) request.getAttribute("passwd");
+        String nombre = request.getParameter("nombre");
+        String apPaterno = request.getParameter("apPaterno");
+        String apMtaerno = request.getParameter("apMaterno");
+        String correo = (String) request.getParameter("email");
+        String genero = (String) request.getParameter("genero");
+        int edad =  Integer.parseInt(request.getParameter("edad"));
+        System.out.println(edad);
+        String password = request.getParameter("passwd");
+        ConexionMySQL con = new ConexionMySQL();
         
-        
-        if(query.altaAnalista(nombre, apPaterno, apMtaerno, edad, correo, genero, password, "1"))
-        {
-        
-            
-            try {
-                 /* TODO output your page here. You may use following sample code. */
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Servlet RegistroAnalistas</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>Servlet RegistroAnalistas at " + request.getContextPath() + "</h1>");
-                out.println("</body>");
-                out.println("</html>");
-            } finally {            
-                out.close();
+        try {
+            con.conexion();
+            if(con.altaAnalista(nombre, apPaterno, apPaterno, edad, correo, genero, password, 1))
+            {
+                response.sendRedirect("analistas.jsp");
             }
+        } catch (Exception e){
+            e.printStackTrace();
+            response.sendError(500, "No se pudo registrar");
         }
-        else
-        {
-            response.sendError(500, "No se ha podido registrar");
-        }
+               
+    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

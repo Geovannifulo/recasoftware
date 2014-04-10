@@ -38,7 +38,7 @@ public class ServletRegistrarAnalista extends HttpServlet {
         String email = request.getParameter("Email");
         String password = request.getParameter("password");
         
-        if(BaseDeDatos.altaAnalista(nombre,apellidoPaterno,apellidoMaterno,edad,email,genero,idJefe,password)){
+        if(BaseDeDatos.altaAnalista(nombre,apellidoPaterno,apellidoMaterno,edad,email,genero,password,1)){
             response.sendRedirect("proyectos.jsp");
         }
         else{
