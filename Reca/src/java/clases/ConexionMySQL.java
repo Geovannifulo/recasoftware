@@ -90,6 +90,19 @@ public class ConexionMySQL {
 		}
                 return resultadosQuery;
     }
+    
+    public ResultSet consultaProyectos(String id){
+        try {
+                st  = con.createStatement();
+                st.executeQuery("select * from Proyecto where idJefe = " + id);
+                resultadosQuery = st.getResultSet();
+        }
+	catch (Exception ex)
+	{
+            System.out.println(ex.toString());
+	}
+        return resultadosQuery;
+    }
 
     public ResultSet consultaAnalistas(){
         try {
@@ -117,7 +130,6 @@ public class ConexionMySQL {
                 return resultadosQuery;
     }
         
-
     public ResultSet consultaEstados(){
         try {
                 st  = con.createStatement();
@@ -433,5 +445,12 @@ public boolean EliminarAnalistas(int idAnalista){
         ResultSet rs = ps.executeQuery();        
         if(rs.next()) return true;
         else return false;
+    }
+    
+    public String getIdJefe(String email) throws SQLException{
+        String sql = "SELECT idJefeAnalistas FROM jefeanalistas WHERE correo='"+email+"';";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();        
+        return rs.getString(1);        
     }
 }
