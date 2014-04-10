@@ -220,8 +220,8 @@ public class ConexionMySQL {
 
      
             String sSQL = "insert into JefeAnalistas " +
-                "(nombre, apPaterno, apMaterno, edad, correo, genero, password)"
-                + "values ('?','?','?','?','?','?','?')";
+                "(nombre, apPaterno, apMaterno, edad, correo, genero,idJefe,password)"
+                + "values ('?','?','?','?','?','?','?','?')";
 
         
         
