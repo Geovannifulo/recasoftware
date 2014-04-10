@@ -28,27 +28,33 @@ public class ServletLogin extends HttpServlet {
         
         if(email.isEmpty() || password.isEmpty()){
             user.setAttribute("error", "Hay campos vacios");
+            response.sendRedirect("login.jsp");
         } else{
             //email valido
             if(!v.isEmailValid(email)){
                 user.setAttribute("error", "Email incorrecto");
+                response.sendRedirect("login.jsp");
             } else{
-                if(v.isPasswordValid(email)){
+                if(v.isPasswordValid(password)){
                     try {
                         d.conexion();
                         if(d.existeUsuario(email, password)){
-                            user.setAttribute("userName", email);
+                            user.setAttribute("userEmail", email);
+                            response.sendRedirect("proyectos.jsp");
                         } else{
                             user.setAttribute("error", "No estas registrado");
+                            response.sendRedirect("login.jsp");
                         }
                         d.cierraConexion();
-                    } catch (Exception e) {                        
+                    } catch (Exception e) {         
+                        user.setAttribute("error", "No DB");
+                        response.sendRedirect("login.jsp");
                     }
                 } else{
                     user.setAttribute("error", "Contraseña no valida");
+                    response.sendRedirect("login.jsp");
                 }
             }
-        }                                
-        response.sendRedirect("proyectos.jsp");
+        }                                        
     }
 }

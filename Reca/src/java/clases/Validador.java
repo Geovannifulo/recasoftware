@@ -14,11 +14,11 @@ public class Validador {
     public boolean isEmailValid(String email){
         p = Pattern.compile("^([0-9a-zA-Z]([_.w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-w]*[0-9a-zA-Z].)+([a-zA-Z]{2,9}.)+[a-zA-Z]{2,3})$");
         m = p.matcher(email);
-        if(m.find()) return false;
-        else return true;
+        if(m.find()) return true;
+        else return false;
     }
-    public boolean isPasswordValid(String $cadena){
-        char[] cadena = $cadena.toLowerCase().toCharArray();
+    public boolean isPasswordValid(String $pass){
+        char[] cadena = $pass.toLowerCase().toCharArray();
         // Mayor a 6 caracteres
         if (cadena.length <= 6) {
             return false;
