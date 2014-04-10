@@ -4,9 +4,9 @@ import javax.swing.JOptionPane;
 
 public class ConexionMySQL {
 
-    public String db ;
-    public String user;
-    public String pass;
+    public String db = "mydb";
+    public String user = "root";
+    public String pass = "";
 
     private Statement  st;
     private Connection con;
@@ -21,7 +21,7 @@ public class ConexionMySQL {
            this.user = user;
            this.pass = pass;    
     }
-
+    
     public Connection conexion()
     {
         String url = "jdbc:mysql://localhost/"+db+ "?user=" + user + "&password=" + pass;
@@ -31,8 +31,6 @@ public class ConexionMySQL {
 			//Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 			Class.forName("com.mysql.jdbc.Driver");
                         //Class.forName("org.gjt.mm.mysql.Driver");
-
-
 			con = DriverManager.getConnection(url);
 
 
@@ -422,7 +420,11 @@ public boolean EliminarAnalistas(int idAnalista){
         con.close();
     }
     
-    public boolean existeUsuario(String email, String password){
-        return true;
+    public boolean existeUsuario(String email, String password) throws SQLException{
+        String sql = "SELECT * FROM jefeanalistas WHERE correo='"+email+"' AND contrasena='"+password+"';";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();        
+        if(rs.next()) return true;
+        else return false;
     }
 }
