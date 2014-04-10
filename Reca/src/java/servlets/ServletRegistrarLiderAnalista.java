@@ -35,7 +35,7 @@ public class ServletRegistrarLiderAnalista extends HttpServlet {
         String password = request.getParameter("password");
         
         if(BaseDeDatos.altaLiderAnalista(nombre,apellidoPaterno,apellidoMaterno,edad,email,genero,password)){
-            response.sendRedirect("proyectos.jsp");
+            response.sendRedirect("login.jsp");
         }
         else{
             response.sendError(112, "Ocurrio un error al intentar registrarlo. Por favor intentelo de nuevo");
