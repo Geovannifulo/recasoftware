@@ -1,3 +1,10 @@
+<%-- 
+    Document   : proyectos
+    Created on : 09-abr-2014, 20:19:30
+    Author     : Geovanni
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +16,10 @@
 	<title>RECA | Proyectos</title>
 </head>
 <body>
+    
+    <%
+        String nombre = request.getParameter("name");
+    %>
 	<header>
 		<h1>RECA</h1>
 	</header>
@@ -66,3 +77,4 @@
 
 </body>
 </html>
+
