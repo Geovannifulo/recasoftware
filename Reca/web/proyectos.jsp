@@ -4,6 +4,7 @@
     Author     : Geovanni
 --%>
 
+<%@page import="clases.ConexionMySQL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -39,6 +40,10 @@
 			</div>
 		</div>
 		<table class="table">
+                    
+      <%
+          ConexionMySQL con = new ConexionMySQL();
+      %>
 	      <thead>
 	        <tr>
 	          <th>#</th>
