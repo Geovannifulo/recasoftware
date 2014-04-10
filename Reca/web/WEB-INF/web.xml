@@ -4,9 +4,25 @@
         <servlet-name>ServletLogin</servlet-name>
         <servlet-class>servlets.ServletLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletRegistrarAnalista</servlet-name>
+        <servlet-class>servlets.ServletRegistrarAnalista</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletRegistrarLiderAnalista</servlet-name>
+        <servlet-class>servlets.ServletRegistrarLiderAnalista</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletLogin</servlet-name>
         <url-pattern>/ServletLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRegistrarAnalista</servlet-name>
+        <url-pattern>/ServletRegistrarAnalista</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRegistrarLiderAnalista</servlet-name>
+        <url-pattern>/ServletRegistrarLiderAnalista</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

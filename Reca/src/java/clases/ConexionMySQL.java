@@ -15,6 +15,7 @@ public class ConexionMySQL {
     public ConexionMySQL(){
         
     }
+    
     public ConexionMySQL(String db, String user, String pass)
     {
            this.db = db;
@@ -32,10 +33,7 @@ public class ConexionMySQL {
 			Class.forName("com.mysql.jdbc.Driver");
                         //Class.forName("org.gjt.mm.mysql.Driver");
 
-
 			con = DriverManager.getConnection(url);
-
-
 		}
 		catch (Exception ex)
 		{
@@ -44,6 +42,8 @@ public class ConexionMySQL {
                         return con;
     }
 
+ // -------------------------------------------------------------------------------------------------
+    
     public ResultSet ejecutaQuery(String cols, String tables, String cond){
         try {
                 st  = con.createStatement();
@@ -214,26 +214,31 @@ public class ConexionMySQL {
     public boolean altaAnalista(String nombre,
                                 String apPaterno, 
                                 String apMaterno, 
-                                String edad, 
+                                int edad, 
                                 String correo, 
                                 String genero, 
-                                String idJefe){
+                                String idJefe, String password){
 
-        String sSQL = "insert into Analistas " +
-                "(nombre, apPaterno, apMaterno, edad, correo, genero, idJefe)"
+     
+            String sSQL = "insert into JefeAnalistas " +
+                "(nombre, apPaterno, apMaterno, edad, correo, genero, password)"
                 + "values ('?','?','?','?','?','?','?')";
-        int n = 0;
 
+        
+        
+        int n = 0;
+        
         try
         {
             PreparedStatement pst = con.prepareStatement(sSQL);
             pst.setString(1, nombre);
             pst.setString(2, apPaterno);
             pst.setString(3, apMaterno);
-            pst.setString(4, edad);
+            pst.setInt(4, edad);
             pst.setString(5, correo);
             pst.setString(6, genero);
             pst.setString(7, idJefe);
+            pst.setString(8, password);
             n = pst.executeUpdate();
         }
         catch (SQLException ex)
@@ -277,13 +282,13 @@ public class ConexionMySQL {
     public boolean altaLiderAnalista(String nombre,
                                 String apPaterno, 
                                 String apMaterno, 
-                                String edad, 
+                                int edad, 
                                 String correo, 
-                                String genero){
+                                String genero, String password){
 
         String sSQL = "insert into JefeAnalistas " +
-                "(nombre, apPaterno, apMaterno, edad, correo, genero)"
-                + "values ('?','?','?','?','?','?')";
+                "(nombre, apPaterno, apMaterno, edad, correo, genero,password)"
+                + "values ('?','?','?','?','?','?','?')";
         int n = 0;
 
         try
@@ -292,9 +297,10 @@ public class ConexionMySQL {
             pst.setString(1, nombre);
             pst.setString(2, apPaterno);
             pst.setString(3, apMaterno);
-            pst.setString(4, edad);
+            pst.setInt(4, edad);
             pst.setString(5, correo);
             pst.setString(6, genero);
+            pst.setString(7, password);
             n = pst.executeUpdate();
         }
         catch (SQLException ex)
